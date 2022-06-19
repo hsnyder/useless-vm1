@@ -36,7 +36,7 @@ Usage - assembling code:
 
 	./uvm1 as [assembly_filename] > [bytecode_filename]
 
-usage - interpreting bytecode:
+Usage - interpreting bytecode:
 
 	./uvm1 run [bytecode_filename]
 
