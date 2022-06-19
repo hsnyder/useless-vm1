@@ -1,0 +1,17 @@
+	ld 	zero    
+	st	sum
+loop:
+	get
+	jz	done
+	add	sum
+	st	sum
+	j	loop
+
+done:
+	ld	sum
+	put
+	stop
+
+zero:	const	0
+sum:	const	0  # There's no stack, so we need a placholder, like a static var in C
+

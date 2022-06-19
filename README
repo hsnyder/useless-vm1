@@ -1,0 +1,44 @@
+UVM1: Useless virtual machine 1
+-------------------------------
+
+Implements a simple virutal machine very similar to the one specified in section 6.1 
+of "The AWK Programming Language" (Aho, Kernighan, Weinberger; 1988).
+
+The virtual machine in question has one single int64 register, and the following 
+assembly language instructions:
+
+	get		read a number from stdin into the register
+	put		print the content of the register to stdout
+	ld	M	load register with contents of memory location M
+	st	M	store register to memory location M 
+	add	M 	add memory location M to register's value
+	sub	M	subtract memory location M from register's value
+	jp	M	jump to location M if register value is positive
+	jz	M	jump to location M if register value is negative
+	j	M	jump to location M
+	stop		terminate execution
+
+Plus there is the pseudo-instruction "const", which should be followed by a number
+and reserves space in memory for one int64, initialized by the given number.
+
+- Comments begin with # and proceed until the end of the line.
+- Labels must occur at the start of the line, and must be followed by a colon
+- M must be a label, in all examples above.
+
+See example.uvm for clarity.
+
+
+Building:
+
+	cc uvm1.c -o uvm1
+
+Usage - assembling code:
+
+	./uvm1 as [assembly_filename] > [bytecode_filename]
+
+usage - interpreting bytecode:
+
+	./uvm1 run [bytecode_filename]
+
+
+
