@@ -1,3 +1,6 @@
+# This program asks the user to input integers, until they enter zero, 
+# then, it outputs the sum of all the numbers that were entered
+
 	ld 	zero    
 	st	sum
 loop:
